@@ -38,8 +38,7 @@ fi
 
 	# initialize 6 workspaces (1-6) (default: 1/monitor)
 	
-	dkcmd set numws=8
-	
+	dkcmd set numws=6	
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
 	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=14 msplit=0.5 ssplit=0.5
@@ -48,13 +47,13 @@ fi
 	dkcmd set ws=6 layout=grid pad left=200 right=200 top=100 bottom=100 gap=50
 
 	# change workspace names (default: number == name -> 1:1, 2:2, 3:3....)
-	# dkcmd set \
-	# 	ws=1  name="edit" \
-	# 	ws=2  name="web" \
-	# 	ws=3  name="😀" \
-	# 	ws=4  name="😠" \
-	# 	ws=5  name="5" \
-	# 	ws=6  name="6" \
+	 dkcmd set \
+	 	ws=1  name="term" \
+	 	ws=2  name="web" \
+	 	ws=3  name="code" \
+	 	ws=4  name="qemu" \
+	 	ws=5  name="vid" \
+	 	ws=6  name="mus" \
 
 	# enable static workspaces assigned to monitors (relevant for multiple monitors)
 	#   aside -
@@ -152,8 +151,9 @@ fi
 	dkcmd rule class="^scratchpad$" scratch=true
 
 	# focus window and workspace on opening
-	# dkcmd rule class="^firefox$" ws=1 focus=true
-
+	 dkcmd rule class="^firefox$" ws=2 focus=true
+	 dkcmd rule class="^discord$" ws=5 focus=true
+	 dkcmd rule class="^zen-alpha$" ws=2 focus=true
 	# update or remove an existing rule with the same match patterns
 	# dkcmd rule class="^firefox$" mon="HDMI-A-0"
 	# dkcmd rule remove class="^firefox$"
